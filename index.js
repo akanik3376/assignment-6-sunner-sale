@@ -1,17 +1,18 @@
 
 // navbar section
+
 // const nav = () => {
 //     const navBar = document.getElementById('nav-bar');
 
 //     const div = document.createElement('div')
 //     div.innerHTML = `
 //     <div class="navbar bg-base-100">
-// <div class="navbar-start">
-// <img src="img/fi_3039386.svg" alt="">
-// <h1 class="text-6xl font-bold"><span class="text-red-600"> PH</span> Tube</h1>
+// <div class="navbar-start gap-3 ">
+//     <img src="img/fi_3039386.svg" alt="">
+//     <h1 class="sm:text-2xl sm:block md:text-4xl lg:text-4xl font-bold"><span class="text-red-600"> PH</span> Tube</h1>
 // </div>
 // <div class="navbar-center">
-// <a class="btn btn-ghost normal-case text-xl">Sort by view</a>
+// <a  class="btn btn-ghost normal-case text-xl ">Sort by view</a>
 // </div>
 // <div class="navbar-end">
 
@@ -19,7 +20,7 @@
 // </div>
 
 // </div >
-//     <hr>   
+//     <hr class='border border-3px'>   
 //      `
 //     navBar.appendChild(div)
 // }
@@ -34,7 +35,7 @@ const handelAllCategory = async () => {
 
     const btnContainer = document.getElementById('btn-container')
     AllCategory.forEach(category => {
-        console.log(category.category_id)
+        // console.log(category.category_id)
 
         // if (category.innerHTML = '') {
         //     console.log('empty')
@@ -42,10 +43,10 @@ const handelAllCategory = async () => {
         const btn = document.createElement('div');
 
 
-        btn.innerHTML = `<button onclick='getCategory("${category.category_id}")' class="btn ">
+        btn.innerHTML = `
+        <a onclick = " getCategory('${category.category_id}')" class="tab btn md:text-xl sm:text-xl lg:text-2xl text-black"">${category.category}</a>
 
-
-            ${category.category}</button > `
+        `
         btnContainer.appendChild(btn)
 
 
@@ -73,14 +74,33 @@ const getCategory = async (dataId) => {
 
     if (getAll.length !== 0) {
         getAll.forEach(singleData => {
-            console.log(singleData.title
-            )
+            let time = singleData?.others?.posted_date;
+            // console.log(time)
+            // set time
+
+            let total = time;
+            function timeConvert(x) {
+                if (!total) {
+                    return ''
+
+                } else {
+                    const hours = Math.floor(total / 3600);
+                    const min = Math.floor((total % 3600) / 60)
+                    return (`${hours} hrs ${min} min ago`)
+                }
+                // console.log('houres:' + hours + "minit:" + min)
+            }
+
+            // timeConvert(total)
+
+
             const div = document.createElement('div');
             div.innerHTML = `
             <div class=" bg-base-100 border">
                 
-                    <figure><img class="w-full h-36 rounded" src="${singleData.thumbnail}" alt="" /></figure>
-                    
+                    <figure><img class="w-full h-36 rounded relative" src="${singleData.thumbnail}" alt="" /></figure>
+                    <p  class='absolute bg-black text-white  px-1 -mt-8'>${timeConvert(total)}</p>
+                   
                 
                 <div class="">
                     <div class="flex items-center gap-4 mt-3 text-2xl">
@@ -92,14 +112,18 @@ const getCategory = async (dataId) => {
                     <p>${singleData.title}</p>
                     </div>
                     
-                    <p class='flex justify-between items-center mt-2'>${singleData.authors[0].profile_name}
+                    <p class='flex gap-3 items-center mt-2'>${singleData.authors[0].profile_name}
                         ${singleData.authors[0].verified ? true ? '<img src="./img/fi_10629607.svg"></img>' : false : ''}
                     </p>
                     <p>${singleData.others.views}</p>
                 </div>
                 `
             alldataContainer.appendChild(div)
+
+
+
         })
+
     }
     else {
         const emptyItem = document.createElement('div');
@@ -117,7 +141,6 @@ const getCategory = async (dataId) => {
 
     // console.log(data.data[0].title)
 }
-
 
 
 handelAllCategory()
