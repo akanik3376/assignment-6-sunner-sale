@@ -1,31 +1,40 @@
 
 // navbar section
 
-// const nav = () => {
-//     const navBar = document.getElementById('nav-bar');
+const handelBtn = () => {
+    window.location.href = 'blog.html'
+}
 
-//     const div = document.createElement('div')
-//     div.innerHTML = `
-//     <div class="navbar bg-base-100">
-// <div class="navbar-start gap-3 ">
-//     <img src="img/fi_3039386.svg" alt="">
-//     <h1 class="sm:text-2xl sm:block md:text-4xl lg:text-4xl font-bold"><span class="text-red-600"> PH</span> Tube</h1>
-// </div>
-// <div class="navbar-center">
-// <a  class="btn btn-ghost normal-case text-xl ">Sort by view</a>
-// </div>
-// <div class="navbar-end">
+const handelSortView = () => {
 
-// <button class="btn bg-red-600 font-bold"> Blog</button>
-// </div>
+    const sortBtn = async (id) => {
 
-// </div >
-//     <hr class='border border-3px'>   
-//      `
-//     navBar.appendChild(div)
-// }
+        const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+        const data = await response.json();
 
-// nav()
+        if (data && data.data && Array.isArray(data.data)) {
+            const allViews = data.data.map(item => item.others.views);
+            // console.log(allViews)
+            const short = (a, b) => {
+                const viewsA = parseFloat(a);
+                const viewsB = parseFloat(b);
+
+                return viewsB - viewsA
+
+            }
+            const Views = allViews.sort(short);
+            getCategory("1000")
+            console.log(Views)
+
+
+        } else {
+            console.log('No valid data found.');
+        }
+
+    }
+
+    sortBtn(1000);
+}
 
 const handelAllCategory = async () => {
     const responce = await fetch(`https://openapi.programming-hero.com/api/videos/categories`)
@@ -62,6 +71,8 @@ const getCategory = async (dataId) => {
     const data = await responce.json();
     const getAll = data.data;
 
+
+
     // console.log(getAll.length)
 
 
@@ -76,6 +87,7 @@ const getCategory = async (dataId) => {
         getAll.forEach(singleData => {
             let time = singleData?.others?.posted_date;
             // console.log(time)
+            // console.log(singleData.others.views)s
             // set time
 
             let total = time;

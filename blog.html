@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <section class="blog-container mx-5 lg:mx-0">
+
+        <!--1. Discuss the scope of var, let, and const
+            2. Tell us the use cases of null and undefined
+            3. What do you mean by REST API? -->
+        <div id="blogs" class="container mx-auto">
+            <div>
+                <div>
+                    <h1 class="text-4xl mb-3 font-bold text-center text-amber-700
+                "> Discuss the scope of var, let, and const</h1>
+                    <hr>
+                    <p class="text-1xl mt-3 text-center">The three keywords var, let, and const work around these
+                        scopes.So
+                        let's understand how hings fit together.</p>
+                </div>
+
+                <!-- var container  -->
+                <div class="var-container mt-5">
+                    <h1 class="text-3xl font-semibold mt-5 mb-4  text-amber-700">var</h1>
+                    <p class="my-5 text-2xl">
+                        Var is the global variable is declare outside and a function. you can reassigned the value
+                        many time.
+                    </p>
+
+                </div>
+                <!-- let container -->
+                <div class="let-container mt-5">
+                    <div>
+
+                        <h1 class="text-3xl font-semibold mt-5 mb-4  text-amber-700 ">Let</h1>
+                        <p class="my-5 text-2xl">
+                            let variable is block scope. let declaration declares re-assignable optionally initializing
+                            each to a value.
+
+                        </p>
+                    </div>
+
+                </div>
+                <!-- const container  -->
+                <div>
+                    <div>
+                        <h1 class="text-3xl font-semibold mt-5 mb-4  text-amber-700">Const</h1>
+                        <p class=" my-5 text-2xl">const variable is block scope. After setting its value you cannot
+                            reassigned the
+                            value a
+                            second time</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="const-container mt-5 md:8 lg:mt-12">
+                    <header>
+
+                        <h1 class="text-5xl mt-5 font-semibold">Const</h1>
+                        <p class="my-5">
+                            Variables declared with the const maintain constant values. const declarations share
+                            some similarities with let declarations.</p>
+                    </header>
+                    <main class="mt-6">
+                        <h3 class="text-3xl">const declarations are block scoped</h3>
+                        <p>Like let declarations, const declarations can only be accessed within the block they were
+                            declared.Const cannot be updated or re-declared
+                            This means that the value of a variable declared with const remains the same within its
+                            scope. It cannot be updated or re-declared.</p>
+
+                    </main>
+                </div> -->
+            <!-- </div> -->
+
+            <div class="null-undefind-container">
+                <header>
+                    <h1 class=" text-center text-4xl text-amber-700 font-bold my-5">Tell us the use cases of null and
+                        undefined
+                    </h1>
+                    <hr>
+                    <p class="mt-3">In JavaScript, null and undefined are two distinct values that are often used in
+                        different contexts.
+                        Understanding their use cases is important for writing robust and error-free code.</p>
+                    <h3></h3>
+                </header>
+                <main class="mt-5">
+                    <!-- null use case  -->
+                    <div>
+                        <h3 class="text-3xl font-semibold mt-5 mb-4  text-amber-700">Null Use Cases:</h3>
+                        <p>
+
+                            <li>Null is an assignment value. It can be assigned to a variable as a representation of no
+                                value. </li>
+                            <li>It is a Primitive value in Javascript</li>
+                            <li>Null is a object </li>
+
+                        </p>
+                    </div>
+                    <!-- undefind use case  -->
+                    <div class="mt-3">
+                        <h3 class="text-3xl font-semibold mt-5 mb-4 text-amber-700">Undefined</h3>
+                        <p>
+                            <li>Undefined means a variable has been declared but has yet not been assigned a value.</li>
+                            <li>It is a global property.</li>
+                            <li>When variable is not assigned a value, then its show undefined.</li>
+                        </p>
+                    </div>
+                </main>
+            </div>
+
+            <!-- What do you mean by REST API -->
+            <div class="rest-api-container">
+                <div>
+                    <h1 class="text-4xl font-bold text-amber-700 text-center mt-10 mb-5"> What do you mean by REST API?
+                    </h1>
+                    <hr>
+                    <p class="my-3">REST API stands for Representational State Transfer Application Programming
+                        Interface. It is a
+                        set of architectural principles and constraints for designing networked applications. </p>
+
+                    <p>A server is used by the application that receives client requests, and contains resources that
+                        the client wants. The server has an API to interact with clients without giving them direct
+                        access to content stored in its database.</p>
+                </div>
+                <div>
+
+
+                    <h1 class="text-3xl font-semibold mt-5 text-amber-700">HTTP Method</h1>
+                    <p class="mt-4">
+                        <li>GET: To retrieve a resource.</li>
+                        <li> POST: To create a new resource..</li>
+                        <li>PUT: To edit or update an existing resource.</li>
+                        <li> DELETE: To delete a resource.</li>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./new.js"></script>
+</body>
+
+</html>

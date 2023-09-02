@@ -15,44 +15,37 @@
 
 </head>
 
-<body class="container p-5 mx-auto">
-    <header id="nav-bar">
+<body class="container  mx-auto">
+    <header class="mx-5">
 
-        <!-- <div class="navbar bg-base-100">
-            <div class="navbar-start">
-                <img src="img/fi_3039386.svg" alt="">
-                <h1 class="text-6xl font-bold"><span class="text-red-600"> PH</span> Tube</h1>
+        <div class="navbar bg-base-100">
+            <div class="navbar-start gap-3 ">
+                <img src="./img/Logo.png" alt="">
+
             </div>
             <div class="navbar-center">
-                <a class="btn btn-ghost normal-case text-xl">Sort by view</a>
+                <a id="sort-btn" onclick="handelSortView()" class="btn btn-ghost normal-case text-xl ">Sort by view</a>
             </div>
             <div class="navbar-end">
 
-                <button class="btn bg-red-600 font-bold"> Blog</button>
+                <button onclick='handelBtn()' id="blog-btn" class="btn bg-red-600 font-bold"> Blog</button>
             </div>
 
         </div>
-        <hr> -->
-    </header class=''>
+        <hr>
+    </header>
 
-    <main>
+    <main class="mx-5">
 
-        <section class="sm:mx-10">
+        <section class="">
             <!-- button div  -->
-            <div id="btn-container" class=" grid grid-cols-4 my-5 text-center">
+            <div id="btn-container" class=" grid grid-cols-2 gap-2  lg:grid-cols-4 my-5 text-center">
 
             </div>
             <!-- card div  -->
 
             <div id="alldata-Container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- <div class="card card-compact bg-base-100 shadow-xl">
-                    <figure><img src="${data.data[0].thumbnail}" alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title">Building a Winning UX Strategy Using the Kano Model</h2>
-                        <p>Awlad Hossain</p>
-                        <p>view:91K views</p>
-                    </div>
-                </div> -->
+
             </div>
 
 
@@ -62,15 +55,7 @@
             <!-- <img src="./img/fi_10629607.svg" alt=""> -->
         </section>
 
-        <section class="blog-container">
 
-            <!--1. Discuss the scope of var, let, and const
-                2. Tell us the use cases of null and undefined
-                3. What do you mean by REST API? -->
-            <div id="blogs" class="">
-
-            </div>
-        </section>
     </main>
 
     <!-- js file link Up -->
