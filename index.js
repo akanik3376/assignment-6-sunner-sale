@@ -108,7 +108,7 @@ const getCategory = async (dataId) => {
 
             const div = document.createElement('div');
             div.innerHTML = `
-            <div class=" bg-base-100 border">
+            <div class=" bg-base-100">
                 
                     <figure><img class="w-full h-36 rounded relative" src="${singleData.thumbnail}" alt="" /></figure>
                     <p  class='absolute bg-black text-white  px-1 -mt-8'>${timeConvert(total)}</p>
