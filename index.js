@@ -127,7 +127,7 @@ const getCategory = async (dataId) => {
                     <p class='flex gap-3 items-center mt-2'>${singleData.authors[0].profile_name}
                         ${singleData.authors[0].verified ? true ? '<img src="./img/fi_10629607.svg"></img>' : false : ''}
                     </p>
-                    <p>${singleData.others.views}</p>
+                    <p>${singleData.others.views} views</p>
                 </div>
                 `
             alldataContainer.appendChild(div)
